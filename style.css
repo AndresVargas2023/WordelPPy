@@ -1,0 +1,74 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-image: url('https://img.freepik.com/foto-gratis/varias-letras-espacio-abajo_23-2147695529.jpg?size=626&ext=jpg&ga=GA1.1.1662095716.1692712839&semt=ais');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  height: 20vh; 
+  margin: 0; 
+}
+     
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+h3{
+    color:#f50f0fc0;
+    
+}
+  #guess-input {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 18px;
+    width: 250px;
+    border: 1px solid #242222;
+    color: black(7, 7, 7);
+    background-color: azure;
+  }
+     
+  #guess-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+     
+  button:active {
+      transform: scale(0.95);
+  }
+     
+  .letter {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 3px;
+      min-width: 20px;
+      text-align: center;
+      display: inline-block;
+      margin-top: 5px;
+      border-radius: 10px;
+  }
+     
+  .row{
+      margin-bottom: 10px;
+  }
+     
+  .input-area{
+      margin: 30px;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    text-align: center;
+
+    
+}
+
