@@ -26,6 +26,12 @@ function terminar(mensaje) {
     CONTENEDOR.innerHTML = mensaje; // Mostrar el mensaje en el contenedor
 }
 
+function revelarPalabraCorrecta() {
+    const mensaje = `<p>La palabra correcta era: ${palabra}</p>`;
+    CONTENEDOR.insertAdjacentHTML('beforeend', mensaje); // Agregar el mensaje al final del contenedor
+    console.log(`<p>La palabra correcta era: ${palabra}</p>`);
+}
+
 function crearFilaPalabra(palabra, intento) {
     const ROW = document.createElement('div');
     ROW.className = 'row';
@@ -36,11 +42,11 @@ function crearFilaPalabra(palabra, intento) {
 
         if (intento[i] === palabra[i]) {
             SPAN.innerHTML = intento[i];
-            SPAN.style.backgroundColor = 'green'; // Cambia el fondo a verde si la letra está en el lugar correcto
+            SPAN.style.backgroundColor = 'green';
             SPAN.style.color = 'white';
         } else if (palabra.includes(intento[i])) {
             SPAN.innerHTML = intento[i];
-            SPAN.style.backgroundColor = 'yellow'; // Cambia el fondo a amarillo si la letra está en la palabra correcta pero no en el lugar correcto
+            SPAN.style.backgroundColor = 'white';
             SPAN.style.color = 'black';
         } else {
             SPAN.innerHTML = intento[i];
@@ -54,7 +60,7 @@ function crearFilaPalabra(palabra, intento) {
 }
 
 function intentar() {
-    const INTENTO = document.getElementById("guess-input").value.toLowerCase();
+    const INTENTO = document.getElementById("guess-input").value.toUpperCase();
 
     if (INTENTO.length !== 5) {
         alert("Intente de nuevo, debes escribir exactamente 5 letras.");
@@ -69,15 +75,15 @@ function intentar() {
         intentos--;
 
         if (intentos === 0) {
+            revelarPalabraCorrecta();
             terminar("<h1>¡PERDISTE!😖</h1>");
+            document.getElementById("guess-input").value = "";
             mostrarPalabraCorrecta(); // Llamar a mostrarPalabraCorrecta después de los intentos
+            function mostrarPalabraCorrecta() {
+            const mensaje = `<p>La palabra correcta era: ${palabra}</p>`;
+            CONTENEDOR.insertAdjacentHTML('beforeend', mensaje); // Agregar el mensaje al final del contened
         }
     }
 
-    document.getElementById("guess-input").value = "";
 }
-
-function mostrarPalabraCorrecta() {
-    const mensaje = `<p>La palabra correcta era: ${palabra}</p>`;
-    CONTENEDOR.insertAdjacentHTML('beforeend', mensaje); // Agregar el mensaje al final del contenedor
 }
