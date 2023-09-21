@@ -67,9 +67,9 @@ function intentar() {
         return;
     }
 
-    if (INTENTO === palabra.toLowerCase()) {
+    if (INTENTO === palabra) {
         terminar("<h1>¡GANASTE!😀</h1>");
-        GRID.appendChild(crearFilaPalabra(palabra, palabra));
+        GRID.appendChild(crearFilaPalabra(palabra, INTENTO));
     } else {
         GRID.appendChild(crearFilaPalabra(palabra, INTENTO));
         intentos--;
@@ -78,12 +78,6 @@ function intentar() {
             revelarPalabraCorrecta();
             terminar("<h1>¡PERDISTE!😖</h1>");
             document.getElementById("guess-input").value = "";
-            mostrarPalabraCorrecta(); // Llamar a mostrarPalabraCorrecta después de los intentos
-            function mostrarPalabraCorrecta() {
-            const mensaje = `<p>La palabra correcta era: ${palabra}</p>`;
-            CONTENEDOR.insertAdjacentHTML('beforeend', mensaje); // Agregar el mensaje al final del contened
         }
     }
-
-}
 }
