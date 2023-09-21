@@ -77,7 +77,8 @@ function intentar() {
         if (intentos === 0) {
             revelarPalabraCorrecta();
             terminar("<h1>¡PERDISTE!😖</h1>");
-            document.getElementById("guess-input").value = "";
         }
+        document.getElementById("guess-input").value = "";
+
     }
 }
